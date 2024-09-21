@@ -12,7 +12,6 @@ function drawChart() {
 // grab the CSV
 // NO FUNCIONA POR ERROR AL PEDIR EL ARCHIVO POR CORS
 $.get("https://docs.google.com/spreadsheet/pub?key=0AhNdznUnSazTdElCVTRTYzF6Zm9DSmlUQkx1NE5DY1E&output=csv",
-      
 function(csvString) {
 // Transformar CSV a array utilizando jQuery
 var arrayData = $.csv.toArrays(csvString, {onParseValue:
