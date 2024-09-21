@@ -1,11 +1,8 @@
 <html>
 <head>
 <title>Google Chart Example</title>
-<script type="text/javascript"
-src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/
-jquery.min.js">
-</script>
-<script src="jquery.csv-0.71.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://jquery-csv.googlecode.com/files/jquery.csv-0.71.js"></script>
 <script type="text/javascript"
 src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
@@ -13,7 +10,9 @@ google.charts.load("current", {packages:["corechart"]});
 google.setOnLoadCallback(drawChart);
 function drawChart() {
 // grab the CSV
-$.get("https://docs.google.com/spreadsheet/pub?key=0AhNdznUnSazTdElCVTRTYzF6Zm9DSmlUQkx1NE5DY1E&output=csv",
+// NO FUNCIONA POR ERROR AL PEDIR EL ARCHIVO POR CORS
+$.get("https://docs.google.com/spreadsheets/d/e/2PACX-1vRUA3uzwhIWJ_4I5aAsSMbZB_lvjZRYrWWa_xK5WmQ3wL5MhlPQun-ShH7hh35tOyPwZQv_o6PwBH_N/pub?output=csv",
+      
 function(csvString) {
 // Transformar CSV a array utilizando jQuery
 var arrayData = $.csv.toArrays(csvString, {onParseValue:
